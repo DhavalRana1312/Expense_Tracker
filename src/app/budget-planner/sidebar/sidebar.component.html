@@ -1,0 +1,21 @@
+<div class="navbar">
+    <h1>
+       Budget Planner
+    
+</h1>
+ </div>
+ <div class="bar" (click)="toggleSlideOut()">
+   
+    <mat-icon>
+   menu</mat-icon>
+ </div>
+
+ <div class="slide-panel" [class.slide-out]="isSlideOut">
+    <div class="slide-content">
+        <h3>Budget Planner</h3>
+        <button type="submit" (click)="onHome()">Home</button><br><br>
+        <button type="submit" (click)="onProfile()">Profile</button><br><br>
+        <button type="submit" (click)="onHistory()">History</button><br><br>
+        <button  type="submit" (click)="onLogout()">Log Out</button><br><br>
+    </div>
+ </div>

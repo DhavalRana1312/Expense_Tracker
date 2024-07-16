@@ -1,0 +1,64 @@
+<h1>Income</h1>
+<div class="container">
+    <h2></h2><br><br>
+    <form [formGroup]="incomeForm" class="input-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="month">Month:</label>
+            <select formControlName="month" id="month" class="form-control" (change)="onChange($event)">
+                <option value="" disabled>Select Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="Sepetmber">Sepetmber</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+
+        <div class="form-group1">
+            <label>Source of Income:</label>
+            <input type="text" id="source" name="=source" placeholder="source" [class.disabled-dropdown]="!selectedMonth" formControlName="source">
+        </div>
+        <div class="form-group2">
+            <label class="amount">Amount:</label>
+            <input type="number" id="amount" class="form-control2" placeholder="Enter amount"
+                [class.disabled-dropdown]="!selectedMonth" formControlName="amount">
+        </div>
+        <div class="form-group">
+            <p>Total Income for</p> {{selectedMonth}}:Rs.{{calculateTotalIncome(selectedMonth)}}
+        </div>
+        <button type="submit" [class.disabled-dropdown]="!selectedMonth">Add</button><br><br>
+
+        <hr>
+        <h3>Income List - {{selectedMonth}}</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let income of getFilteredIncome()">
+                    <td>{{income.source}}</td>
+                    <td>{{income.amount}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button">
+            <button (click)="onBack()">
+                Back
+            </button>
+            <button (click)="saveForm()">
+                Save
+            </button>
+        </div>
+    </form>
+
+</div>

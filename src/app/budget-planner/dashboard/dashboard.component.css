@@ -1,0 +1,163 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  overflow-x: auto;
+}
+
+.card, .card-Expense, .card-ToDo, .card-Total {
+  flex: 0 0 auto;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  width: 300px;
+}
+
+.card:hover, .card-Expense:hover, .card-ToDo:hover, .card-Total:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-header, .card-Expense .card-header, .card-ToDo .card-header, .card-Total .card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card .card-header .icon, .card-Expense .card-header .icon, .card-ToDo .card-header .icon, .card-Total .card-header .icon {
+  background-color: #007bff;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.card h2, .card-Expense h2, .card-ToDo h2, .card-Total h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.card .details, .card-Expense .details, .card-ToDo .details, .card-Total .details {
+  margin-top: 10px;
+}
+
+.card .details h3, .card-Expense .details h3, .card-ToDo .details h3, .card-Total .details h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #007bff;
+}
+
+.card .details ul, .card-Expense .details ul, .card-ToDo .details ul, .card-Total .details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card .details ul li, .card-Expense .details ul li, .card-ToDo .details ul li, .card-Total .details ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.card .action-button, .card-Expense .action-button, .card-ToDo .action-button, .card-Total .action-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card .action-button:hover, .card-Expense .action-button:hover, .card-ToDo .action-button:hover, .card-Total .action-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-wrap: wrap;
+  }
+}
+
+.button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button-secondary {
+  background-color: #6c757d;
+}
+
+.button-secondary:hover {
+  background-color: #495057;
+}
+
+.button-danger {
+  background-color: #dc3545;
+}
+
+.button-danger:hover {
+  background-color: #c82333;
+}
+
+.button-outline {
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
+.button-outline:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.button-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+
+.button-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.button-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.button-outline-danger:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}

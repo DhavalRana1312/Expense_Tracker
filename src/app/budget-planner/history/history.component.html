@@ -1,0 +1,51 @@
+<app-sidebar></app-sidebar>
+<h1>History</h1>
+<div class="container">
+    <h2></h2><br><br>
+    <form [formGroup]="historyForm" class="input-form">
+        <div class="form-group">
+            <label for="month">Month:</label>
+            <select formControlName="month" id="month" class="form-control" (change)="onChangeHistory($event)">
+                <option value="" disabled>Select Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="Sepetmber">Sepetmber</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>History for</p> {{selectedMonth}}:-Rs.{{calculateTotalHistory(selectedMonth)}}
+        </div>
+
+        <hr>
+        <h3>History List - {{selectedMonth}}</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let history of getFilteredHistory()">
+                    <td>{{history.source}}</td>
+                    <td>{{history.amount}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button">
+            <button (click)="onBack()">
+                Back
+            </button>
+        </div>
+    </form>
+
+</div>
